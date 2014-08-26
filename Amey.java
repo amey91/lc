@@ -34,10 +34,11 @@ public class Amey {
 
 	public static void log(String s){
 		System.out.println(s);
-		
+/*
 		PriorityQueue pq = new PriorityQueue(9);
 		LinkedHashMap lhmap = new LinkedHashMap();
 		lhmap.remove(lhmap.entrySet().iterator().next());
+*/
 	}
 }
 
