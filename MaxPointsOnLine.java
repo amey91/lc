@@ -63,22 +63,22 @@ public class MaxPointsOnLine {
 	}
 
 	// line represented by ax + by = c
-			private static class LineEquation{
-				int xCoeff;
-				int yCoeff;
-				int cons;
-				public LineEquation(){
-					xCoeff = 0;
-					yCoeff = 0;
-					cons = 0;
-				}
-				public LineEquation(int x, int y, int c){
-					xCoeff = x;
-					yCoeff = y;
-					cons = c;
-				}
-				public String toString(){
-					return "Line "+xCoeff+"x"+" + "+yCoeff+"y = "+cons;
-				}
-			}
+	private static class LineEquation{
+		int xCoeff;
+		int yCoeff;
+		int cons;
+		public LineEquation(){
+			xCoeff = 0;
+			yCoeff = 0;
+			cons = 0;
+		}
+		public LineEquation(int x, int y, int c){
+			xCoeff = x;
+			yCoeff = y;
+			cons = c;
+		}
+		public String toString(){
+			return "Line "+xCoeff+"x"+" + "+yCoeff+"y = "+cons;
+		}
+	}
 }
