@@ -32,7 +32,7 @@ public class Amey {
 		return head;
 	}
 
-	public static void log(String s){
+	public static void log(Object s){
 		System.out.println(s);
 /*
 		PriorityQueue pq = new PriorityQueue(9);
