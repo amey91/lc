@@ -7,8 +7,7 @@ public class MaxSubArray {
         int currSum=A[0], maxSum=A[0];
         for(int i=1; i<A.length; i++){
             currSum = Math.max(currSum+A[i],A[i]);
-            if(currSum>maxSum)
-                maxSum = currSum;
+            maxSum = currSum>maxSum? currSum:maxSum; //this seems to be faster than Math.max() for my 64 bit JVM
         }
         return maxSum;
     }

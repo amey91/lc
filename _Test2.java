@@ -1,5 +1,7 @@
 package leetcode;
 
+import junit.framework.Assert;
+
 public class _Test2 {
 	int i = 0;
 	static int j = 0;
@@ -28,6 +30,14 @@ public class _Test2 {
 	}
 	
 	public static void main(String args[]){
+		Integer a = 77;
+		Integer b = 77;
+		Integer x = 88888;
+		Integer y = 88888;
+		if(a==b)
+			Amey.log("int less than 127 share ref");
+		if((x==y))
+			Amey.log("int more than 127 dont sshare ref");
 		_Test2 t = new _Test2();
 		_Test2.InnerInstanceClass instanceClass = t.new InnerInstanceClass();
 		_Test2.InnerStaticClass staticClass = new _Test2.InnerStaticClass();
