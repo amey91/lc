@@ -8,8 +8,9 @@ public class Amey {
 		ListNode temp = head;
 		StringBuilder sb = new StringBuilder();
 		while(temp!=null){
-			sb.append(temp.val+"");
+			sb.append(temp.val+" ");
 			temp=temp.next;
+//			log(sb.toString());
 		}
 		log("List :: " + sb.toString());
 	}
