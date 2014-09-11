@@ -1,10 +1,23 @@
 package leetcode;
 
+import java.util.Stack;
+
 import junit.framework.Assert;
 
 public class _Test2 {
 	int i = 0;
 	static int j = 0;
+	private static final int ggg;
+	private final int ggg2;
+	final Stack<Integer> f = new Stack<Integer>();
+	
+	
+	static{
+		ggg = 8;
+	}
+	public _Test2(){
+		ggg2 = 5;
+	}
 	
 	private static void outerStaticMethod(Class<?> inClass){
 		Amey.log("outerStaticmethod called by " + inClass.getName());
@@ -29,6 +42,7 @@ public class _Test2 {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static void main(String args[]){
 		Integer a = 77;
 		Integer b = 77;
@@ -39,12 +53,20 @@ public class _Test2 {
 		if((x==y))
 			Amey.log("int more than 127 dont sshare ref");
 		_Test2 t = new _Test2();
+		Stack<Integer> s2 = new Stack<Integer>();
+		@SuppressWarnings("unused")
+		Stack<Integer> s5 = (Stack<Integer>) s2.clone();
+		testException();
 		_Test2.InnerInstanceClass instanceClass = t.new InnerInstanceClass();
 		_Test2.InnerStaticClass staticClass = new _Test2.InnerStaticClass();
 		
 		instanceClass.display();
 		staticClass.display();
 		
+	}
+	
+	private static void testException(){
+		throw new IndexOutOfBoundsException();
 	}
 }
 
