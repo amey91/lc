@@ -21,6 +21,7 @@ public class _Test2 {
 	
 	private static void outerStaticMethod(Class<?> inClass){
 		Amey.log("outerStaticmethod called by " + inClass.getName());
+
 	}
 	
 	private void outerInstanceMethod(Class<?> inClass){

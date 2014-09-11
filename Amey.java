@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.PriorityQueue;
 
@@ -40,6 +42,17 @@ public class Amey {
 		LinkedHashMap lhmap = new LinkedHashMap();
 		lhmap.remove(lhmap.entrySet().iterator().next());
 */
+	}
+	
+	public static void main(String args[]){
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		a.add(0); a.add(1); a.add(2);
+		Iterator<Integer> i = a.iterator();
+		while(i.hasNext())
+		{
+		    log(i.next());
+		    //Do something with obj
+		}
 	}
 }
 
