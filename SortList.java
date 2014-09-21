@@ -1,17 +1,7 @@
 package leetcode;
 
-class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) {
-          val = x;
-          next = null;
-     }
-      @Override
-      public String toString(){
-    	  return val+"";
-      }
- }
+import leetcode.commons.ListNode;
+
  
 // inspired by jayadev's answer on http://stackoverflow.com/questions/7685/merge-sort-a-linked-list
 // however, I improved it by checking for more null pointers in the findMid method to avoid null pointer exception

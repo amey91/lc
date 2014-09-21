@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.commons;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -34,7 +34,16 @@ public class Amey {
 		}
 		return head;
 	}
-
+	
+	public static void displayList(ListNode head){
+		StringBuilder sb = new StringBuilder();
+		while(head!=null){
+			sb.append(" " + head.val);
+			head = head.next;
+		}
+		System.out.println("The list = "+ sb.toString());
+	}
+	
 	public static void log(Object s){
 		System.out.println(s);
 /*

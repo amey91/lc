@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.commons.ListNode;
+
 public class ReorderList {
     public void reorderList(ListNode head) {
         ListNode mid = splitListIntoHalf(head);
