@@ -63,6 +63,52 @@ public class Amey {
 		    //Do something with obj
 		}
 	}
+	
+	public static TreeNode makeTree(String nodeList, char delimiter){
+		String[] nodes = nodeList.split(String.valueOf(delimiter));
+		TreeNode head = new TreeNode(Integer.parseInt(nodes[0]));
+		for(int i=1; i< nodes.length; i++){
+			head = insertIntoTree(head, Integer.parseInt(nodes[i]));
+		}
+		return head;
+	}
+	
+	public static TreeNode insertIntoTree(TreeNode head, int val){
+		TreeNode temp = head;
+		while(temp!=null){
+			if(temp.val<val){
+				//traverse right tree
+				if(temp.right==null){
+					temp.right = new TreeNode(val);
+					return head;
+				} 
+				temp=temp.right;
+			} else {
+				//traverse left tree
+				if(temp.left==null){
+					temp.left = new TreeNode(val);
+					return head;
+				}
+				temp = temp.left;
+			}
+		}
+		return head;
+	}
+
+	public static void displayTreeInorder(TreeNode head) {
+		StringBuilder s = inorderTraversal(head, new StringBuilder());
+		log("InorderTraversal: "+ s.toString());
+	}
+
+	private static StringBuilder inorderTraversal(TreeNode node, StringBuilder s) {
+		if(node == null)
+			return s;
+		inorderTraversal(node.left, s);
+		s.append(node.val);
+		inorderTraversal(node.right, s);
+		return s;
+		
+	}
 }
 
 class Amey2 extends Amey{

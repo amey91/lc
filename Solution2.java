@@ -50,7 +50,9 @@ public class Solution2 {
     	
     	Amey.log("abc AB11		1121 ^&%&1$&1@* :\"sibn".replaceAll("[^A-Za-z]", ""));
     	String t = "asd";
-    	t.to
+    	StringBuilder sb = new StringBuilder();
+    	sb.append("aasdafsd");
+    	System.out.println(sb);
     	
     }
 }
