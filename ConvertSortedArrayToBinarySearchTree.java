@@ -11,7 +11,7 @@ import leetcode.commons.TreeNode;
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class HeightBalancedBinaryTree {
+public class ConvertSortedArrayToBinarySearchTree {
     public TreeNode sortedArrayToBST(int[] num) {
         if(num.length==0)
             return null;
