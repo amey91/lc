@@ -6,6 +6,14 @@ import java.util.LinkedHashMap;
 import java.util.PriorityQueue;
 
 public class Amey {
+	
+	public static void main(String args[]){
+		String input = "[2,1,3,4,5,6,7]";
+		ListNode head = convertStringToList(input, '[', ']', ",");
+		displayList(head);
+		
+	}
+
 	public static void printList(ListNode head){
 		ListNode temp = head;
 		StringBuilder sb = new StringBuilder();
@@ -51,17 +59,6 @@ public class Amey {
 		LinkedHashMap lhmap = new LinkedHashMap();
 		lhmap.remove(lhmap.entrySet().iterator().next());
 */
-	}
-	
-	public static void main(String args[]){
-		ArrayList<Integer> a = new ArrayList<Integer>();
-		a.add(0); a.add(1); a.add(2);
-		Iterator<Integer> i = a.iterator();
-		while(i.hasNext())
-		{
-		    log(i.next());
-		    //Do something with obj
-		}
 	}
 	
 	public static TreeNode makeTree(String nodeList, char delimiter){
