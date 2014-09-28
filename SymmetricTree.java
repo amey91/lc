@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.HashMap;
+
 import leetcode.commons.TreeNode;
 
 /**
@@ -17,7 +19,7 @@ public class SymmetricTree {
             return true;
         return checkForSymmetry(root.left, root.right);
     }
-    
+
     private boolean checkForSymmetry(TreeNode left, TreeNode right){
         if(left==null && right==null)
             return true;
