@@ -3,7 +3,7 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-public class SingleNumber2Method1 {
+public class SingleNumberIIMethod1 {
     public int singleNumber(int[] A) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int k : A){
