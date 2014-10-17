@@ -1,17 +1,40 @@
 package leetcode.commons;
 
+import java.io.ObjectInputStream.GetField;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.PriorityQueue;
 
+import org.junit.internal.runners.TestMethod;
+
+import Misc.TestSingleNumber2;
+
 public class Amey {
-	
+
 	public static void main(String args[]){
-		String input = "[2,1,3,4,5,6,7]";
-		ListNode head = convertStringToList(input, '[', ']', ",");
-		displayList(head);
-		
+		//		String input = "[2,1,3,4,5,6,7]";
+		//		ListNode head = convertStringToList(input, '[', ']', ",");
+		//		displayList(head);
+		//		System.out.println("abcd is palindrome is : "+ checkPalindrome("abcd"));
+		//		System.out.println("aaa is palindrome is : "+ checkPalindrome("aaa"));
+		//		System.out.println("abccba is palindrome is : "+ checkPalindrome("abccba"));
+		//		System.out.println("\"\" is palindrome is : "+ checkPalindrome(""));
+		//		System.out.println("abcdcba is palindrome is : "+ checkPalindrome("abcdcba"));
+		String s1 = "321zyxabcdefg321zyxabcdefg321zyxabcdefghgfedcbaxyz123gfedcbaxyz123gfedcbaxyz123";
+		Amey amey =  new Amey();
+		try{
+			Method m1 = amey.getClass().getDeclaredMethod("checkPalindromeUsingCharArray", s1.getClass());
+			Method m2 = amey.getClass().getDeclaredMethod("checkPalindromeUsingReverse", s1.getClass());
+			Method m3 = amey.getClass().getDeclaredMethod("checkPalindromeUsingCharAt", s1.getClass());
+			System.out.println("Palindrome using reverse takes "+ methodPerformance(amey, m2 , s1)+" mS");
+			System.out.println("Palindrome using tochararray takes "+ methodPerformance(amey, m1 , s1)+" mS");
+			System.out.println("Palindrome using charat takes "+ methodPerformance(amey, m3 , s1)+" mS");
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	public static void printList(ListNode head){
@@ -20,7 +43,7 @@ public class Amey {
 		while(temp!=null){
 			sb.append(temp.val+" ");
 			temp=temp.next;
-//			log(sb.toString());
+			//			log(sb.toString());
 		}
 		log("List :: " + sb.toString());
 	}
@@ -42,7 +65,7 @@ public class Amey {
 		}
 		return head;
 	}
-	
+
 	public static void displayList(ListNode head){
 		StringBuilder sb = new StringBuilder();
 		while(head!=null){
@@ -51,16 +74,16 @@ public class Amey {
 		}
 		System.out.println("The list = "+ sb.toString());
 	}
-	
+
 	public static void log(Object s){
 		System.out.println(s);
-/*
+		/*
 		PriorityQueue pq = new PriorityQueue(9);
 		LinkedHashMap lhmap = new LinkedHashMap();
 		lhmap.remove(lhmap.entrySet().iterator().next());
-*/
+		 */
 	}
-	
+
 	public static TreeNode makeTree(String nodeList, char delimiter){
 		String[] nodes = nodeList.split(String.valueOf(delimiter));
 		TreeNode head = new TreeNode(Integer.parseInt(nodes[0]));
@@ -69,7 +92,7 @@ public class Amey {
 		}
 		return head;
 	}
-	
+
 	public static TreeNode insertIntoTree(TreeNode head, int val){
 		TreeNode temp = head;
 		while(temp!=null){
@@ -104,14 +127,60 @@ public class Amey {
 		s.append(node.val);
 		inorderTraversal(node.right, s);
 		return s;
-		
+
+	}
+
+	public static boolean checkPalindromeUsingCharArray(String s){
+		if(s==null || s.equals(""))
+			return false;
+		char[] c = s.toCharArray();
+		int left = 0;
+		int right = c.length-1;
+		while(left<right){
+			if(c[left++]!=c[right--])
+				return false;
+		}
+		return true;
+	}
+
+	public static boolean checkPalindromeUsingReverse(String s){
+		if(s==null || s.equals(""))
+			return false;
+		return s.equals(new StringBuilder(s).reverse().toString());
+	}
+
+	public static boolean checkPalindromeUsingCharAt(String s){
+		if(s==null || s.equals(""))
+			return false;
+		int left = 0;
+		int right = s.length()-1;
+		while(left<right){
+			if(s.charAt(left++)!=s.charAt(right--))
+				return false;
+		}
+		return true;
+	}
+
+	public static long methodPerformance(Object object, Method method, String a){
+		long initial = System.nanoTime();
+		try {
+			int i = 0;
+			for(; i<1000000; i++)
+				method.invoke(object, a);
+		} catch (IllegalAccessException | IllegalArgumentException
+				| InvocationTargetException e) {
+			e.printStackTrace();
+		}
+		return (System.nanoTime()-initial)/1000000;
 	}
 }
 
 class Amey2 extends Amey{
-	
+
 	public static void printList(ListNode head){
 		log("Called from child class");
 		printList(head);
 	}
 }
+
+
