@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Triangle {
     public int minimumTotal(List<List<Integer>> triangle) {
-        // same as getting the size of the triangle, as 
+    	// same as getting the size of the triangle, as 
         // triangle has n elements at the nth level
         int[] sol = new int[triangle.get(triangle.size()-1).size()];
-        for(int i=0;i<triangle.size();i++){
+        for(int i=0;i<triangle.get(triangle.size()-1).size();i++){
             sol[i] = triangle.get(triangle.size()-1).get(i);
         }
         //iterate from the end to the top
