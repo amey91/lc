@@ -14,11 +14,11 @@ import leetcode.commons.ListNode;
  * }
  */
 public class InsertionSortList {
-   	public ListNode insertionSortList(ListNode head) {
+   	public ListNode<Integer> insertionSortList(ListNode<Integer> head) {
 		if(head==null || head.next==null)
 			return head;
-		ListNode first=head;
-		ListNode second=head.next;
+		ListNode<Integer> first=head;
+		ListNode<Integer> second=head.next;
 		//for each element in list
 		while(second!=null){
 			//insert into correct place
@@ -31,8 +31,8 @@ public class InsertionSortList {
 					second=first.next;
 				}
 				else{
-					ListNode loopVar=head;
-					ListNode loopVar2=head.next;
+					ListNode<Integer> loopVar=head;
+					ListNode<Integer> loopVar2=head.next;
 					while(loopVar2!=second && loopVar2.val<second.val){
 						loopVar2=loopVar2.next;
 						loopVar=loopVar.next;

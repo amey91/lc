@@ -1,13 +1,14 @@
 package leetcode.commons;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class ListNode extends LinkedList<Integer> {
+public class ListNode<E> extends ArrayList<E> {
 	private static final long serialVersionUID = -9216634136972409241L;
 	
-	public int val;
-      public ListNode next;
-      public ListNode(int x) {
+	public E val;
+      public ListNode<E> next;
+      public ListNode(E x) {
           val = x;
           next = null;
      }

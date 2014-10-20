@@ -24,14 +24,14 @@ import leetcode.commons.TreeNode;
  * }
  */
 public class ConvertSortedListToBinarySearchTree {
-    public TreeNode sortedListToBST(ListNode head) {
+    public TreeNode sortedListToBST(ListNode<Integer> head) {
         if(head==null)
             return null;
         if(head.next==null)
             return new TreeNode(head.val);
             
         List<TreeNode> answer = new ArrayList<TreeNode>();
-        ListNode temp = head;
+        ListNode<Integer> temp = head;
         while(temp!=null){
             answer.add(new TreeNode(temp.val));
             temp=temp.next;

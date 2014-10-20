@@ -14,7 +14,7 @@ import leetcode.commons.ListNode;
  * }
  */
 public class RemoveDuplicatesFromSortedListII {
-    public ListNode deleteDuplicates(ListNode head) {
+    public ListNode<Integer> deleteDuplicates(ListNode<Integer> head) {
         if(head==null || head.next==null)
             return head;
             
@@ -27,12 +27,12 @@ public class RemoveDuplicatesFromSortedListII {
         if(head==null||head.next==null)
             return head;
         
-        ListNode curr=head;
-        ListNode next=head.next;
+        ListNode<Integer> curr=head;
+        ListNode<Integer> next=head.next;
         while(next!=null && next.next!=null){
             if(next.val==next.next.val){
                 int val = next.val;
-                ListNode duplicateEnd = next.next;
+                ListNode<Integer> duplicateEnd = next.next;
                 while(duplicateEnd!=null && duplicateEnd.val==val)
                     duplicateEnd=duplicateEnd.next;
                 curr.next=duplicateEnd;

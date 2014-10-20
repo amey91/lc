@@ -14,7 +14,7 @@ import leetcode.commons.ListNode;
  * }
  */
 public class AddTwoNumbers {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode<Integer> addTwoNumbers(ListNode<Integer> l1, ListNode<Integer> l2) {
         if(l1==null && l2==null)
             return null;
         if(l1==null)
@@ -24,8 +24,8 @@ public class AddTwoNumbers {
         int currVal = l1.val + l2.val;
         int carry = currVal/10;
         currVal = currVal%10;
-        ListNode head = new ListNode(currVal);
-        ListNode temp = head;
+        ListNode<Integer> head = new ListNode(currVal);
+        ListNode<Integer> temp = head;
         l1=l1.next;
         l2=l2.next;
         while(l1!=null && l2!=null){

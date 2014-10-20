@@ -48,28 +48,46 @@ public class Amey {
 		log("List :: " + sb.toString());
 	}
 
-	public static ListNode convertStringToList(String s, char startBracket, char endBracket,
-			String delimiter) {
+	@SuppressWarnings("unchecked")
+	public static <E> ListNode<E> convertStringToList(String s, char startBracket, char endBracket,
+			String delimiter, Class<E> clas) {
 
 		s=s.replace(startBracket+"","");
 		s=s.replace(endBracket+"","");
 		String[] nodes = s.split(delimiter);
 		if(nodes.length==0)
 			return null;
-		ListNode head = new ListNode(Integer.parseInt(nodes[0]));
-		ListNode curr= head;
-		for(int i=1; i<nodes.length;i++){
-			ListNode temp = new ListNode(Integer.parseInt(nodes[i]));
-			curr.next = temp;
-			curr=curr.next;
+		if(clas.getClass().equals(Integer.class)){
+			ListNode<Integer> head = new ListNode<>(Integer.parseInt(nodes[0]));
+			ListNode<Integer> curr= head;
+			for(int i=1; i<nodes.length;i++){
+				ListNode<Integer> temp = new ListNode<>(Integer.parseInt(nodes[i]));
+				curr.next = temp;
+				curr=curr.next;
+			}
+			return (ListNode<E>) head;
 		}
-		return head;
+		
+		if(clas.getClass().equals(String.class)){
+			ListNode<String> head = new ListNode<>(nodes[0]);
+			ListNode<String> curr= head;
+			for(int i=1; i<nodes.length;i++){
+				ListNode<String> temp = new ListNode<>(nodes[i]);
+				curr.next = temp;
+				curr=curr.next;
+			}
+			System.out.println("HOLA");
+			return (ListNode<E>) head;
+		}
+		
+		System.out.println(clas.getClass().getName());
+		return null;
 	}
 
-	public static void displayList(ListNode head){
+	public static <E> void displayList(ListNode<E> head){
 		StringBuilder sb = new StringBuilder();
 		while(head!=null){
-			sb.append(" " + head.val);
+			sb.append(" " + head.val.toString());
 			head = head.next;
 		}
 		System.out.println("The list = "+ sb.toString());
