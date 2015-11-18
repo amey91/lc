@@ -10,6 +10,7 @@ public class LRUCache {
         assert capacity>0;
         //set accessOrder to true. accessOrder includes inserts as well as reads.
         map = new LinkedHashMap<Integer, Integer>(capacity, 0.75f, true){
+            @Override
             protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest){
                 return size()>capacity;                
             }
