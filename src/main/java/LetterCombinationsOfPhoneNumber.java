@@ -1,30 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class LetterCombinationsOfPhoneNumber {
   public List<String> letterCombinations(String digits) {
-    return generateNextCombo(digits, 0, new ArrayList<String>());
+    char[] currentLetters = new char[digits.length()];
+    List<String> ans = new ArrayList<String>();
+    nextCombo(digits, currentLetters, 0, ans);
+    return ans;
   }
 
-  private List<String> generateNextCombo(String digits, Integer currIndex, List<String> oldList) {
-    if(null==digits || digits.length()==0 || currIndex>=digits.length() ) {
-      return oldList;
-    }
-    char currDigit = digits.charAt(currIndex);
-    String currDigitList = dict[Integer.parseInt(String.valueOf(currDigit))];
-    List<String> newList = new ArrayList<>();
-    for(char digit : currDigitList.toCharArray()) {
-      if(oldList.isEmpty()) {
-        newList.add(String.valueOf(digit));
-      } else {
-        List<String> oldListClone = new ArrayList<>(oldList);
-        newList.addAll(oldListClone.stream().map(_oldString -> _oldString+String.valueOf(digit)).collect(Collectors.toList()));
-      }
-    }
-    oldList = null;
-    return generateNextCombo(digits, currIndex+1, newList);
+  private void nextCombo(String digits, char[] currentLetters, Integer currIndex, List<String> list) {
 
+    if(currIndex.equals(digits.length())) {
+      if(currIndex>0) {
+        list.add(new String(currentLetters));
+      }
+      return;
+    }
+
+    String dictLetters = dict[Integer.parseInt(String.valueOf(digits.charAt(currIndex)))];
+    for(Character c : dictLetters.toCharArray()) {
+      currentLetters[currIndex] = c;
+      nextCombo(digits, currentLetters, currIndex+1, list);
+    }
   }
 
   private String[] dict = new String[] {
