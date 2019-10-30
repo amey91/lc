@@ -31,6 +31,8 @@ class Solution {
             fast = fast.next;
         }
         
+        // the fast movement was not necessary. Since n is valid, we can assume that the only node in the list needs to be removed.
+        // TODO: you can also assert that n == 1
         if (slow == fast) {
             return null;
         }
