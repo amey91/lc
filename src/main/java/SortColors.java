@@ -1,3 +1,7 @@
+package main.java;
+
+import java.util.Arrays;
+
 public class SortColors {
     public void sortColors(int[] A) {
         if(A.length<=1)
@@ -31,5 +35,18 @@ public class SortColors {
         int temp=A[index1];
         A[index1]=A[index2];
         A[index2]=temp;
+    }
+
+    // update 2020, did the 2 pass solution pretty cleanly here
+    public void sortColors2020(int[] nums) {
+        int[] count = new int[3];
+        for (int num: nums) {
+            count[num]++;
+        }
+        int currIndex = 0;
+        for (int i = 0; i< 3; i++) {
+            Arrays.fill(nums, currIndex, currIndex + count[i], i);
+            currIndex += count[i];
+        }
     }
 }

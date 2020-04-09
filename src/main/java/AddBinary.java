@@ -1,3 +1,5 @@
+package main.java;
+
 public class AddBinary {
     public String addBinary(String a, String b) {
         int[] x = new int[a.length()];
