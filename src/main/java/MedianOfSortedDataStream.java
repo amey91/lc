@@ -3,6 +3,7 @@ package main.java;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+// https://leetcode.com/problems/find-median-from-data-stream/
 public class MedianOfSortedDataStream {
 //        Solution 2 using 2 priority queues
 //            time for add = O(logn) for deletion/insertion into each queue for single add in worst case
