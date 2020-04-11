@@ -13,8 +13,12 @@ public class MedianOfSlidingWindow {
     // space = n
     class Solution {
         public double[] medianSlidingWindow(int[] nums, int k) {
-            double[] slidingMedians = new double[nums.length - k + 1];
 
+            if(nums == null || nums.length == 0 || k == 0 || nums.length < k){
+                return new double[0];
+            }
+
+            double[] slidingMedians = new double[nums.length - k + 1];
             PriorityQueue<Integer> minHeap = new PriorityQueue<>();
             PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
             for (int i = 0; i < k; i++) {
