@@ -2,8 +2,24 @@ package main.java;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.TreeSet;
 
 // https://leetcode.com/problems/sliding-window-median/
+
+/**
+ *
+ * 2 TreeSet implementation vs 2 PrioritySet implementation
+ *             |  add   |  remove |    peek   |
+ * TreeSet     | logn   |  logn   |    logn   |
+ * PrioritySet | logn   |    n    |    1      |
+ *
+ * treeset peek is log n because findFirst() findLast() iterates through the set
+ *
+ * priority set remove is n because it is backed by an array, so it finds it first then removes it
+ *
+ * Thus, in hindsight, this program is better solved by tree set because of (n iterations) of (add + remove + peek)
+ */
+
 public class MedianOfSlidingWindow {
 
     // 2 priority queues
