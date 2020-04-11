@@ -7,11 +7,9 @@ public class UniquePaths {
     class Solution {
         public int uniquePaths(int m, int n) {
             // matrix is (m-1)x(n-1)
-
-            int paths = 0;
             int[][] memoize = new int[m][n];
-            for (int i =0; i<memoize.length; i++) {
-                Arrays.fill(memoize[i], -1);
+            for (int[] ints : memoize) {
+                Arrays.fill(ints, -1);
             }
 
             // bottom row
