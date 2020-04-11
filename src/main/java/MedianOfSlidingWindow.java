@@ -28,13 +28,12 @@ public class MedianOfSlidingWindow {
 
     // 2 tree set solution
     static class Solution {
-
         class Pair {
             int val;
             int index;
 
             public Pair(int val, int index) {
-                this.val = val;
+                this.val =  val;
                 this.index = index;
             }
         }
