@@ -2,6 +2,8 @@ package main.java;
 
 // #213 https://leetcode.com/problems/house-robber-ii/
 
+import javafx.util.Pair;
+
 // This solution iterates once forward and once backward, but the thing is I can just iterate forward twice!!!!
 public class HouseRobber2 {
     class Solution {
