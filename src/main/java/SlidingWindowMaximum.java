@@ -1,6 +1,9 @@
 package main.java;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
 import java.util.PriorityQueue;
 
 // #239. Sliding Window Maximum
@@ -34,6 +37,10 @@ public class SlidingWindowMaximum {
             window.remove(nums[i - 1]);
             res[i] = window.peek();
         }
+
+
+        List<Integer> result = new ArrayList<>();
+        Integer[] asada = result.toArray(new Integer[0]);
         return res;
     }
 }
