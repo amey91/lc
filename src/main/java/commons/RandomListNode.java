@@ -1,4 +1,4 @@
-package commons;
+package main.java.commons;
 public class RandomListNode {
 	public int label;
 	public RandomListNode next, random;

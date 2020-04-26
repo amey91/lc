@@ -1,4 +1,4 @@
-package commons;
+package main.java.commons;
 
 public class TreeNode {
 	public TreeNode left;
