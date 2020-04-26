@@ -17,7 +17,7 @@ public class TopKFrequentElements {
                 map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
             }
 
-            // allocate initial capacity since it is already known to prevent rehashing
+            // Min heap. Allocate initial capacity since it is already known to prevent rehashing.
             PriorityQueue<Map.Entry<Integer, Integer>> pq =
                     new PriorityQueue<>(
                             map.size(),
