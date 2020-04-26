@@ -30,6 +30,8 @@ public class TopKFrequentElements {
 
             for (Map.Entry<Integer, Integer> mapEntry: map.entrySet()) {
                 pq.add(mapEntry);
+
+                // keep size below K otherwise solution will ne logn instead of logk !!
                 if (pq.size() > k) {
                     pq.poll();
                 }
