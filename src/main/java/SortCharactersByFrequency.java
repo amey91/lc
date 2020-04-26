@@ -9,7 +9,7 @@ public class SortCharactersByFrequency {
                 return s;
             }
 
-            // all inputs fit within this array!!
+            // all inputs fit within this array!! this handles all upper, lower and numbers
             int[] counts = new int[128];
             char[] resultS = s.toCharArray();
             for (char c: resultS) {
