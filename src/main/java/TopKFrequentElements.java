@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+// #347. Top K Frequent Elements
+// Time = n + mlogk where k is Kth top elements and n is size of input and m is number of distinct characters in input
+// space = m + k
 public class TopKFrequentElements {
     class Solution {
         public int[] topKFrequent(int[] nums, int k) {
