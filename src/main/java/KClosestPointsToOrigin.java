@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 
 // TODO quick sort  or quick select solution
 // See https://en.wikipedia.org/wiki/Quickselect
+// See https://leetcode.com/problems/kth-largest-element-in-an-array/discuss/60300/Java-Quick-Select
 // #973. K Closest Points to Origin
 
 public class KClosestPointsToOrigin {
