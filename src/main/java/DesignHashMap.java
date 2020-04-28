@@ -8,6 +8,7 @@ public class DesignHashMap {
 
         /** Initialize your data structure here. */
         public MyHashMap() {
+            // max input key is 100000
             arr = new int[100000];
         }
 
