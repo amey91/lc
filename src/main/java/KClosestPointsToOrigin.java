@@ -3,9 +3,10 @@ package main.java;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-// TODO quick sort solution
-
+// TODO quick sort  or quick select solution
+// See https://en.wikipedia.org/wiki/Quickselect
 // #973. K Closest Points to Origin
+
 public class KClosestPointsToOrigin {
 
     class Solution {
