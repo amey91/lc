@@ -10,6 +10,7 @@ public class SortCharactersByFrequency {
             }
 
             // all inputs fit within this array!! this handles all upper, lower and numbers
+            // SO you can either count frequencies using map.getOrDefault() or use this chars[index]++
             int[] counts = new int[128];
             char[] resultS = s.toCharArray();
             for (char c: resultS) {
