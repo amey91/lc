@@ -3,8 +3,8 @@ package main.java;
 import java.util.ArrayList;
 import java.util.List;
 
+// #442. Find All Duplicates in an Array
 public class FindDuplicatesInArray {
-    // #442. Find All Duplicates in an Array
     class Solution {
         public List<Integer> findDuplicates(int[] nums) {
 
