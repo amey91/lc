@@ -1,4 +1,6 @@
-import commons.ListNode;
+package main.java;
+
+import main.java.commons.ListNode;
 
 /**
  * Definition for singly-linked list.

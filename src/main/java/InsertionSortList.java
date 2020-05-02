@@ -1,4 +1,6 @@
-import commons.ListNode;
+package main.java;
+
+import main.java.commons.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -12,11 +14,11 @@ import commons.ListNode;
  * }
  */
 public class InsertionSortList {
-   	public ListNode<Integer> insertionSortList(ListNode<Integer> head) {
+   	public ListNode insertionSortList(ListNode head) {
 		if(head==null || head.next==null)
 			return head;
-		ListNode<Integer> first=head;
-		ListNode<Integer> second=head.next;
+		ListNode first=head;
+		ListNode second=head.next;
 		//for each element in list
 		while(second!=null){
 			//insert into correct place
@@ -29,9 +31,9 @@ public class InsertionSortList {
 					second=first.next;
 				}
 				else{
-					ListNode<Integer> loopVar=head;
-					ListNode<Integer> loopVar2=head.next;
-					while(loopVar2!=second && loopVar2.val<second.val){
+					ListNode loopVar=head;
+					ListNode loopVar2=head.next;
+					while(loopVar2.val < second.val){
 						loopVar2=loopVar2.next;
 						loopVar=loopVar.next;
 					}

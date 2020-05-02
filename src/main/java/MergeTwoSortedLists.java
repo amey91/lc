@@ -1,4 +1,6 @@
-import commons.ListNode;
+package main.java;
+
+import main.java.commons.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -34,7 +36,7 @@ public class MergeTwoSortedLists {
         }
     }
 
-    private ListNode getMin(ListNode<Integer> l1, ListNode<Integer> l2) {
+    private ListNode getMin(ListNode l1, ListNode l2) {
         return l1==null? l2 : l2==null? l1 : l1.val<l2.val? l1 : l2;
     }
 

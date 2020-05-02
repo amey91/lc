@@ -1,4 +1,6 @@
-import commons.ListNode;
+package main.java;
+
+import main.java.commons.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -12,7 +14,7 @@ import commons.ListNode;
  * }
  */
 public class RemoveDuplicatesFromSortedListII {
-    public ListNode<Integer> deleteDuplicates(ListNode<Integer> head) {
+    public ListNode deleteDuplicates(ListNode head) {
         if(head==null || head.next==null)
             return head;
             
@@ -25,12 +27,12 @@ public class RemoveDuplicatesFromSortedListII {
         if(head==null||head.next==null)
             return head;
         
-        ListNode<Integer> curr=head;
-        ListNode<Integer> next=head.next;
+        ListNode curr=head;
+        ListNode next=head.next;
         while(next!=null && next.next!=null){
             if(next.val==next.next.val){
                 int val = next.val;
-                ListNode<Integer> duplicateEnd = next.next;
+                ListNode duplicateEnd = next.next;
                 while(duplicateEnd!=null && duplicateEnd.val==val)
                     duplicateEnd=duplicateEnd.next;
                 curr.next=duplicateEnd;

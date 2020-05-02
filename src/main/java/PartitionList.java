@@ -1,4 +1,6 @@
-import commons.ListNode;
+package main.java;
+
+import main.java.commons.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -12,7 +14,7 @@ import commons.ListNode;
  * }
  */
 public class PartitionList {
-	public ListNode<Integer> partition(ListNode<Integer> head, int x) {
+	public ListNode partition(ListNode head, int x) {
 		if(head==null || head.next==null)
 			return head;
 		ListNode ltTail=null;

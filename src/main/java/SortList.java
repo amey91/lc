@@ -1,28 +1,28 @@
+package main.java;
 
 
- 
 // inspired by jayadev's answer on http://stackoverflow.com/questions/7685/merge-sort-a-linked-list
 // however, I improved it by checking for more null pointers in the findMid method to avoid null pointer exception
 
-import commons.ListNode;
+import main.java.commons.ListNode;
 
 public class SortList {
-    public ListNode<Integer> sortList(ListNode<Integer> head) {
+    public ListNode sortList(ListNode head) {
         if(head == null || head.next==null) // only one element
             return head;
-        ListNode<Integer> mid = findMid(head);
-        ListNode<Integer> nextToMid = mid.next;
+        ListNode mid = findMid(head);
+        ListNode nextToMid = mid.next;
         mid.next = null; //break list here
         
         return merge(sortList(head), sortList(nextToMid));
     }
     
     //@return: head of the merged list
-    public static ListNode<Integer> merge(ListNode<Integer> a, ListNode<Integer> b){
+    public static ListNode merge(ListNode a, ListNode b){
         if(a==null || b==null)
             return a==null? b : a;
-        ListNode<Integer> dummyHead = new ListNode<Integer>(-1);
-        ListNode<Integer> temp = dummyHead;
+        ListNode dummyHead = new ListNode(-1);
+        ListNode temp = dummyHead;
         while(a!=null && b!=null){
             if(a.val<=b.val){
                 temp.next = a; 
@@ -38,9 +38,9 @@ public class SortList {
     }
     
     
-    public static ListNode<Integer> findMid(ListNode<Integer> head){
-        ListNode<Integer> slow = head;
-        ListNode<Integer> fast = head;
+    public static ListNode findMid(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
         while(slow.next!=null && fast.next!=null && fast.next.next!=null){
             slow = slow.next;
             fast = fast.next.next;
