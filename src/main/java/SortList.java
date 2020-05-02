@@ -4,7 +4,7 @@
 // inspired by jayadev's answer on http://stackoverflow.com/questions/7685/merge-sort-a-linked-list
 // however, I improved it by checking for more null pointers in the findMid method to avoid null pointer exception
 
-import commons.ListNode;
+import main.java.commons.ListNode;
 
 public class SortList {
     public ListNode<Integer> sortList(ListNode<Integer> head) {
