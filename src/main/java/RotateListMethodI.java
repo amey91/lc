@@ -1,3 +1,5 @@
+package main.java;
+
 import main.java.commons.ListNode;
 
 /**
@@ -15,7 +17,7 @@ public class RotateListMethodI  {
     public ListNode rotateRight(ListNode head, int n) {
         if(head==null || head.next==null || n==0)
             return head;
-        ListNode temp = head;
+        ListNode temp;
         int count=n;
         while(count>0){
             temp=head;
