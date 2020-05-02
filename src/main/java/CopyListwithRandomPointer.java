@@ -1,4 +1,6 @@
-import commons.RandomListNode;
+package main.java;
+
+import main.java.commons.RandomListNode;
 
 import java.util.HashMap;
 

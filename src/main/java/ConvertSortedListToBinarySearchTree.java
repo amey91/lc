@@ -1,5 +1,5 @@
-import commons.ListNode;
-import commons.TreeNode;
+import main.java.commons.ListNode;
+import main.java.commons.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
