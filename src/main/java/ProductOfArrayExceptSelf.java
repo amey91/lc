@@ -2,6 +2,9 @@ package main.java;
 
 public class ProductOfArrayExceptSelf {
 
+//  238. Product of Array Except Self
+//  https://leetcode.com/problems/product-of-array-except-self/
+
   // this approach depends on eliminating one of the 2 arrays we use in N space solution
   public int[] productExceptSelf(int[] nums) {
     // algorithm
