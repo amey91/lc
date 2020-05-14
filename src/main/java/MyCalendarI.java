@@ -6,7 +6,7 @@ import java.util.TreeMap;
 // time = logn (for search) + logn (for insert)
 // space = n
 public class MyCalendarI {
-//  https://leetcode.com/problems/my-calendar-i/submissions/
+//  https://leetcode.com/problems/my-calendar-i/
 //  #729. My Calendar I
     class MyCalendar {
         TreeMap<Integer, Integer> calendar;
@@ -34,7 +34,6 @@ public class MyCalendarI {
                 calendar.put(start, end);
                 return true;
             }
-
             return false;
         }
     }
