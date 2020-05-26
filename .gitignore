@@ -5,3 +5,5 @@ build/
 .gradle/
 *.iml
 Solution2.java
+output
+
