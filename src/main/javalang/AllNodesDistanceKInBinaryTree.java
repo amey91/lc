@@ -1,24 +1,25 @@
 package javalang;
-
-import java.util.LinkedList;
-import java.util.List;
-
-import javalang.commons.TreeNode;
-
+// 863. All Nodes Distance K in Binary Tree
+// https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
 // pass up and pass down a value
 // if that value is -1 then just keep going
 // else value += 1
 // if at any point value == K then add to answer and pass this value up/down
 // if node.val == target, then pass up/down 0
 
-public class ConstructBinaryTreeFromPreorderTraversal {
+import java.util.LinkedList;
+import java.util.List;
+
+import javalang.commons.TreeNode;
+
+public class AllNodesDistanceKInBinaryTree {
     public List<Integer> distanceK(TreeNode root, TreeNode target, int K) {
         List<Integer> list = new LinkedList<>();
-        if (root == null || K < 0) {
+        if(root == null || K < 0) {
             return list;
         }
 
-        kDistanceHelper(root, target, K, -1 /*currentVal*/, list);
+        kDistanceHelper(root, target,  K, -1 /*currentVal*/, list);
         return list;
     }
 
@@ -31,7 +32,7 @@ public class ConstructBinaryTreeFromPreorderTraversal {
         // top down
         if (node == target) {
             currentVal = 0;
-        } else if (currentVal >= 0) {
+        } else if (currentVal >=0) {
             currentVal += 1;
         }
 
@@ -47,14 +48,13 @@ public class ConstructBinaryTreeFromPreorderTraversal {
         int rightDist = kDistanceHelper(node.right, target, K, currentVal, result);
 
         int bottomUpDist = Math.max(leftDist, rightDist);
-
         // if bottom up results contain node, then process it
         if (bottomUpDist >= 0) {
             bottomUpDist++;
             if (bottomUpDist == K) {
                 result.add(node.val);
             }
-            if (leftDist >= 0) {
+            if (leftDist >=0 ) {
                 // if node was in left subtree, there might be nodes at distance K in right subtree
                 kDistanceHelper(node.right, target, K, bottomUpDist, result);
             } else {
@@ -63,7 +63,7 @@ public class ConstructBinaryTreeFromPreorderTraversal {
             }
         }
 
-        // dont care about currentVal (topDown value) while returning
+        // dont care about currentVal while returning
         if (node == target) {
             return 0;
         } else {
