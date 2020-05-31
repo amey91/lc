@@ -35,6 +35,7 @@ public class SmallestStringFromLeaf {
 
 // 6.50 finished. Bug: want creating new arraydeque in compareDeckToMinDeque function for one of the conditions
 
+// IMP: Finally, replace ArrayDeque with StringBuidler since we can remove last element of StringBuilder. This beats >99%
     class Solution {
 
 
@@ -56,6 +57,8 @@ public class SmallestStringFromLeaf {
             if (node.right == null && node.left == null) {
                 // need to compare depth first
                 sb = sb.reverse();
+
+                // string.compareTo() compares Lexicographically!
                 if (minString == null || sb.toString().compareTo(minString) < 0) {
                     minString = sb.toString();
                 }
