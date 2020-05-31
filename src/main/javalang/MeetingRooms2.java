@@ -7,8 +7,12 @@ public class MeetingRooms2 {
     // 253. Meeting Rooms II
 // https://leetcode.com/problems/meeting-rooms-ii/
 
+// DS: priority queue
     class Solution {
 
+
+        // time = NlogN for sorting and NLogN for PQ building
+        // space = N for heap
         public int minMeetingRooms(int[][] intervals) {
             if (intervals == null || intervals.length == 0) {
                 return 0;
