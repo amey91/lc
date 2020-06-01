@@ -14,6 +14,7 @@ public class GroupShiftedStrings {
 
     class Solution {
         public List<List<String>> groupStrings(String[] strings) {
+            // ALGO
             // fidn the sequence
             // if sequqnce exists in the map, add to that value list
             // else create and then add to value list
@@ -46,8 +47,7 @@ public class GroupShiftedStrings {
             for (int i = 1; i < s.length(); i++) {
                 int diff = chars[i - 1] - chars[i];
 
-
-                // IMP: key space is withint 0 and 26
+                // IMP: key space is within 0 and 26, otherwise a,z and b,a will match to different buckets
                 if (diff < 0) {
                     diff += 26;
                 }
