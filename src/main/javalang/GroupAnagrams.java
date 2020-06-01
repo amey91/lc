@@ -6,6 +6,9 @@ public class GroupAnagrams {
     // 49. Group Anagrams
 // https://leetcode.com/problems/group-anagrams/
     class Solution {
+
+        // time = N * KlogK for sorting each string in the list, K is length of individual string
+        // space = N
         public List<List<String>> groupAnagrams(String[] strs) {
             Map<String, List<String>> map = new HashMap<>(strs.length);
             if (strs == null) {
