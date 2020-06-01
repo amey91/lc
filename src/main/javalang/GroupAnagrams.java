@@ -3,31 +3,26 @@ package javalang;
 import java.util.*;
 
 public class GroupAnagrams {
-    public List<List<String>> groupAnagrams(String[] strs) {
-        int index = 0;
-        Map<String, Integer> map = new HashMap<>();
-        List<List<String>> list = new ArrayList<>();
-        for(String s : strs) {
-            char[] c = s.toCharArray();
-            Arrays.sort(c);
-            String key = Arrays.toString(c);
-            if(map.containsKey(key)) {
-                List<String> innerList = list.get(map.get(key));
-                for(int i=0; i<innerList.size(); i++) {
-                    if(s.compareTo(innerList.get(i))<=0) {
-                        innerList.add(i, s);
-                        break;
-                    }
-                    if(i==innerList.size()-1) {
-                        innerList.add(innerList.size(), s);
-                        break;
-                    }
-                }
-            } else {
-                map.put(key, index++);
-                list.add(new ArrayList<String>(){{add(s);}});
+    // 49. Group Anagrams
+// https://leetcode.com/problems/group-anagrams/
+    class Solution {
+        public List<List<String>> groupAnagrams(String[] strs) {
+            Map<String, List<String>> map = new HashMap<>(strs.length);
+            if (strs == null) {
+                return new ArrayList<>();
             }
+            for (String s : strs) {
+                char[] chars = s.toCharArray();
+                Arrays.sort(chars);
+                String sorted = new String(chars);
+                if (!map.containsKey(sorted)) {
+                    map.put(sorted, new LinkedList<>());
+                }
+                map.get(sorted).add(s);
+            }
+
+            return new ArrayList<>(map.values());
+
         }
-        return list;
     }
 }
