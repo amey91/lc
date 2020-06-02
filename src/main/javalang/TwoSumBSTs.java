@@ -14,6 +14,9 @@ public class TwoSumBSTs {
 // 2. there is another solution where we iterate first tree and for every node in first, we try to find a node in the second one
 // time = N*logM; space = 2
 
+
+//    https://leetcode.com/problems/two-sum-bsts/
+//    1214. Two Sum BSTs
     class Solution {
         public boolean twoSumBSTs(TreeNode root1, TreeNode root2, int target) {
             if (root1 == null || root2 == null) {
