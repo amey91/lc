@@ -15,7 +15,7 @@ public class TwoSum4InputIsABST {
 
     class Solution {
 
-        public boolean findTarget_recursive(TreeNode root, int k) {
+        public boolean findTarget(TreeNode root, int k) {
             if (root == null) {
                 return false;
             }
