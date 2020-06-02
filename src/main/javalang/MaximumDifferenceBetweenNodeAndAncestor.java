@@ -34,6 +34,7 @@ public class MaximumDifferenceBetweenNodeAndAncestor {
             if (node.right != null) {
                 diff = Math.max(maxDiff(node.right, min, max), diff);
             }
+
             return diff;
         }
     }
