@@ -8,7 +8,9 @@ public class BinaryTreeLongestConsecutiveSequence2 {
 // 549. Binary Tree Longest Consecutive Sequence II
 // https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/
 
-    // better readable solution is available in discussion section https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/discuss/101509/Java-recursively-compute-ascending-and-descending-sequence
+    // IMPORTANT : better single pass N time and 1 space solution is available in discussion section https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/discuss/101509/Java-recursively-compute-ascending-and-descending-sequence
+
+    // this parses each node multiple times since top nodes call into bottom nodes repeatedly, at least N^2
     class Solution {
 
         // solution parses every node and at every node, we start search for incrementing and decrementing sequence on both sides
