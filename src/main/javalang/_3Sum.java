@@ -3,43 +3,60 @@ package javalang;
 import java.util.*;
 
 public class _3Sum {
-    public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> answer = new ArrayList<>();
-        Arrays.sort(nums);
-        for(int i=0; i<nums.length-2; i++) {
+    // 15. 3Sum
+    //    https://leetcode.com/problems/3sum/
 
-            // TIP: normally, I would do a 2sum using hashmap, but since this
-            // array is sorted, we have a special case where we can traverse the array from
-            // each direction and smartly decide which pointer to move
-            if(i>0 && nums[i]==nums[i-1]) {
-                continue;
-            }
-            int j=i+1;
-            int k=nums.length-1;
-            while(j<k) {
-                int currSum = nums[i] + nums[j] + nums[k];
-                if(currSum==0) {
-                    answer.add(makeTrio(nums[i], nums[j], nums[k]));
-                    j++;k--;
-                } else if(currSum < 0) {
-                    j++;
-                } else {
-                    k--;
-                }
-                while(j<k && j>(i+1) && nums[j]==nums[j-1]) {
-                    j++;
-                }
-                while(j<k && k<nums.length-1 && nums[k]==nums[k+1]) {
-                    k--;
-                }
+    class Solution {
+        List<List<Integer>> result = new ArrayList<>();
+
+        // we sort first then iterate over array once. For each element, we need to parse the others and find 2Sum in remaining
+        // N for outer loop, N for sorted 2Sum = N^2 time
+        // 1 space
+        public List<List<Integer>> threeSum(int[] nums) {
+            if (nums == null) {
+                return result;
             }
 
-
+            Arrays.sort(nums);
+            for (int i = 0; i < nums.length - 2; i++) {
+                // prevent duplicates in first number in solution
+                if (i > 0 && nums[i] == nums[i - 1]) {
+                    continue;
+                }
+                int target = 0;
+                do2Sum(nums, target - nums[i], i + 1, nums.length - 1);
+            }
+            return result;
         }
-        return answer;
-    }
 
-    private List<Integer> makeTrio(int a, int b, int c) {
-        return new ArrayList<Integer>(){{add(a);add(b);add(c);}};
+        private void do2Sum(int[] nums, int target, int start, int end) {
+            if (start >= end) {
+                return;
+            }
+            // for recodring answer, can also be passed into this method as param
+            int currIndex = start - 1;
+
+            while (start < end) {
+                if (nums[start] + nums[end] == target) {
+                    List<Integer> l = new ArrayList<>();
+                    l.add(nums[currIndex]);
+                    l.add(nums[start]);
+                    l.add(nums[end]);
+                    result.add(l);
+
+                    // IMPORTANT: prevent duplicates inside the trio!!
+                    start++;
+                    end--;
+                    // if the start **AND** new start are the same as previous numbers in solution, skip duplicate in answer
+                    while (start < end && nums[start] == nums[start - 1]) {
+                        start++; // its enough to skip only one number of the two since trio is broken
+                    }
+                } else if (nums[start] + nums[end] > target) {
+                    end--;
+                } else {
+                    start++;
+                }
+            }
+        }
     }
 }
