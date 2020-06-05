@@ -27,6 +27,7 @@ public class MotonicArray {
             int compare = Integer.compare(A[i], A[i + 1]);
 
             for (; i < A.length - 1; i++) {
+                // equal characters are allowed
                 if (A[i] != A[i + 1] && Integer.compare(A[i], A[i + 1]) != compare) {
                     return false;
                 }
