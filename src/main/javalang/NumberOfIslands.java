@@ -7,7 +7,7 @@ public class NumberOfIslands {
     class Solution {
 
         // nice approach instead of hardocing directions
-        private static final int[][] DIRS = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        private final int[][] DIRS = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
         public int numIslands(char[][] grid) {
             if (grid == null || grid.length == 0) {
