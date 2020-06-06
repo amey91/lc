@@ -8,6 +8,9 @@ public class NumberOfLongestIncreasingSubsequence {
 
     class Solution {
 
+
+        // we basically maintain a length array which is the length of the longest increasing subsequence at a point
+        // second is count array which identifies how many substrings of this length exists at that point
         public int findNumberOfLIS(int[] nums) {
             if (nums == null || nums.length == 0) {
                 return 0;
@@ -30,7 +33,7 @@ public class NumberOfLongestIncreasingSubsequence {
                             // new maxLength
                             lengths[i] = lengths[j] + 1;
 
-                            // NOTE: counts can be handled separately in another loop tbut this gives better runtime
+                            // NOTE: counts can be handled separately in another loop but this gives better runtime
                             counts[i] = counts[j];
                         } else if (lengths[i] == lengths[j] + 1) {
                             // another length that is matching max length for this item till now
@@ -47,6 +50,7 @@ public class NumberOfLongestIncreasingSubsequence {
 
 
             // this can also be moved to inside the loop but keeping it here for readability
+            // count over counts array and consider all counts for length = maxlength
             int count = 0;
             for (int i = 0; i < n; i++) {
                 if (lengths[i] == maxLength) {
