@@ -1,4 +1,4 @@
-package javalang;
+package javalang.arrayprocessing;
 
 public class NumberOfLongestIncreasingSubsequence {
     // https://leetcode.com/problems/number-of-longest-increasing-subsequence/
