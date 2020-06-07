@@ -9,6 +9,7 @@ public class NumberOfIslands {
         // nice approach instead of hardocing directions
         private final int[][] DIRS = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
+        // iterate over all islands and clear current island before moving ahead
         public int numIslands(char[][] grid) {
             if (grid == null || grid.length == 0) {
                 return 0;
