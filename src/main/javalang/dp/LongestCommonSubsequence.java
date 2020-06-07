@@ -1,4 +1,4 @@
-package javalang;
+package javalang.dp;
 
 public class LongestCommonSubsequence {
 
