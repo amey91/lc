@@ -23,9 +23,10 @@ public class NumberOfLongestIncreasingSubsequence {
             int[] counts = new int[n];
 
             for (int i = 0; i < n; i++) { // 1
-                // each object is a subsequence
+                // IMPORTANT: each object is a subsequence
                 lengths[i] = 1;
-                // each object can be reached at least oo
+
+                // IMPORTANT: each object can be reached at least once
                 counts[i] = 1;
                 for (int j = 0; j < i; j++) {
                     if (nums[i] > nums[j]) {
