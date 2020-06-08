@@ -32,6 +32,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
 			for (int i = 0; i<charArr.length; i++) { // i=2
 				if (prevIndexes[charArr[i]] >= 0) {
 					int oldPreviousIndex = prevIndexes[charArr[i]];
+
+					// start from max of current start and last occurrence of this duplicate (since current start may already be ahead of last occurence e.g. abba)
 					startFromIndex = Math.max(startFromIndex, oldPreviousIndex +1); // 2
 				}
 				prevIndexes[charArr[i]] = i; // a = 0 b=1
