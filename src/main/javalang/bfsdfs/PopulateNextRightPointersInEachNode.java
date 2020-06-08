@@ -31,6 +31,7 @@ class Node {
 // this when we reach a new level, all the next pointers for that level are already set
     // time = N
     // space = 1
+    // btw also check out PopulateNextRightPointersInEachNode2 for a more generic solution that solves missing nodes as well
     class Solution {
         public Node connect(Node root) {
             if (root == null) {
@@ -75,29 +76,29 @@ class Node {
 //     public class BfsNode {
 //         Node node;
 //         int level;
-
+//
 //         public BfsNode(Node node, int level) {
 //             this.node = node;
 //             this.level = level;
 //         }
 //     }
-
-
+//
+//
 //     public Node connect(Node root) {
 //         // do bfs
 //         // if bfs queue is not empty and there is a node in the queue at the same level, then that is the next node; else next = null
-
-
+//
+//
 //         if (root == null) {
 //             return null;
 //         }
-
+//
 //         Queue<BfsNode> queue = new ArrayDeque<>();
 //         queue.offer(new BfsNode(root, 1));
-
+//
 //         while (!queue.isEmpty()) {
 //             BfsNode currNode = queue.poll();
-
+//
 //             if (queue.isEmpty()) {
 //                 currNode.node.next = null;
 //             } else if (queue.peek().level != currNode.level) {
@@ -105,7 +106,7 @@ class Node {
 //             } else {
 //                 currNode.node.next = queue.peek().node;
 //             }
-
+//
 //             if (currNode.node.left != null) {
 //                 queue.offer(new BfsNode(currNode.node.left, currNode.level + 1));
 //             }
@@ -113,7 +114,7 @@ class Node {
 //                 queue.offer(new BfsNode(currNode.node.right, currNode.level + 1));
 //             }
 //         }
-
+//
 //         return root;
 //     }
     }
