@@ -17,6 +17,7 @@ public class KnightDialer {
 
     private static final int NUMS = 9;
 
+    // they have asked us to mod answer with this number
     private static final int MODULO = 1_000_000_007;
 
     // this is the linear solution with DP + memoization. This can be further optimized by going bottoms up since we dont have to recurse down
