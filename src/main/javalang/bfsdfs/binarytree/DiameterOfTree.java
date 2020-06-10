@@ -7,6 +7,8 @@ public class DiameterOfTree {
 // https://leetcode.com/problems/diameter-of-binary-tree/
 
 
+    // uses DFS to go to each node once
+    //
     class Solution {
 
         int max = 0;
