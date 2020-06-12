@@ -10,6 +10,7 @@ public class SubArraySumEqualsK {
 
     class Solution {
 
+        // maintain a running sum and for each running sum, see how many times we have seen (runningSum - k)
         public int subarraySum(int[] nums, int k) {
             Map<Integer, Integer> map = new HashMap<>();
             int count = 0, runningSum = 0;
@@ -19,6 +20,8 @@ public class SubArraySumEqualsK {
             for (int i : nums) {
 
                 // only past runningSums that have runningSum-k matter difference between both subarrays is exactly k!
+                // suppose runningsums = [ ... n... m ... ]
+                // thus m - n = k i.e. n = m - k
                 runningSum += i;
                 if (map.containsKey(runningSum - k)) {
                     count += map.get(runningSum - k);
