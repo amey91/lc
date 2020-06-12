@@ -1,4 +1,4 @@
-package javalang;
+package javalang.arrayprocessing;
 
 import java.util.HashMap;
 import java.util.Map;
