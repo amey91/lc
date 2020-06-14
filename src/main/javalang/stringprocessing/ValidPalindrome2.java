@@ -1,4 +1,4 @@
-package javalang.stringmatching;
+package javalang.stringprocessing;
 
 public class ValidPalindrome2 {
     // 680. Valid Palindrome II
