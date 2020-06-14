@@ -1,46 +1,83 @@
 package javalang;
 
 public class AddBinary {
-    public String addBinary(String a, String b) {
-        int[] x = new int[a.length()];
-        int[] y = new int[b.length()];
-        
-        for(int i=0; i<x.length; i++)
-            x[i] = Integer.parseInt(a.charAt(i)+"");
-        for(int i=0; i<y.length; i++)
-            y[i] = Integer.parseInt(b.charAt(i)+"");
-        
-        int xPointer = x.length-1;
-        int yPointer = y.length-1;
-        
-        int carry=0;
-        StringBuilder ans = new StringBuilder();
-        while(xPointer>=0 || yPointer>=0){
-            int currSum=carry;
-            
-            if(xPointer>=0){
-                currSum += x[xPointer--];
+    // 67. Add Binary
+// https://leetcode.com/problems/add-binary/
+
+    class Solution {
+
+        // add each number from the end and maintain carry. If one of the number ends, keep adding the number that is left
+        // if the carry is still reaminng at end, include it in answer
+        // space = max(N, M)
+        // time = max(N, M)
+        public String addBinary(String a, String b) {
+
+            StringBuilder sb = new StringBuilder();
+
+            char[] A = a.toCharArray();
+            char[] B = b.toCharArray();
+
+            int i = A.length -1 ;
+            int j = B.length - 1;
+            int carry = 0;
+            while (i >=0 && j >= 0) {
+                int[] sum = addNumbers(A[i], B[j], carry);
+                sb.append(sum[0]);
+                carry = sum[1];
+                i--;j--;
             }
-            
-            if(yPointer>=0){
-                currSum += y[yPointer--];
+
+            while (i >=0) {
+                int[] sum = addNumbers(A[i--], carry);
+                sb.append(sum[0]);
+                carry = sum[1];
             }
-            
-            if(currSum==3){
-                carry = 1;
-                currSum=1;
-            } else if(currSum==2) {
-                carry = 1;
-                currSum = 0;
+
+
+            while (j >=0) {
+                int[] sum = addNumbers(B[j--], carry);
+                sb.append(sum[0]);
+                carry = sum[1];
+            }
+
+            if (carry == 1) {
+                sb.append(carry);
+            }
+
+            return sb.reverse().toString();
+        }
+
+        private int[] addNumbers(char a_, char b_, int carry) {
+            int a =  a_ == '1'? 1 : 0;
+            int b = b_ =='1'? 1 : 0;
+            int sum = a + b + carry;
+
+            int result[] = new int[2];
+            if (sum == 3) {
+                result[0] = 1;
+                result[1] = 1;
+            } else if (sum == 2) {
+                result[0] = 0;
+                result [1] = 1;
             } else {
-                carry = 0;
+                result[0] = sum;
             }
-            ans.insert(0, String.valueOf(currSum));
+            return result;
+
         }
-        
-        if(carry>0){
-            ans = ans.insert(0,String.valueOf(carry));
+
+        private int[] addNumbers(char a_, int carry) {
+            int a =  a_ == '1'? 1 : 0;
+            int sum = a + carry;
+
+            int result[] = new int[2];
+            if (sum == 2) {
+                result[0] = 0;
+                result [1] = 1;
+            } else {
+                result[0] = sum;
+            }
+            return result;
         }
-        return ans.toString();
     }
 }
