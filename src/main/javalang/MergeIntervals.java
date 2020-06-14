@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MergeIntervals {// 56. Merge Intervals
+public class MergeIntervals {
+    // 56. Merge Intervals
     // https://leetcode.com/problems/merge-intervals/
     class Solution {
 
