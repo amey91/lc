@@ -1,4 +1,4 @@
-package javalang;
+package javalang.divideandconquer;
 
 import javalang.commons.ListNode;
 
