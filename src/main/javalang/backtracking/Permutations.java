@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutations {
+//https://leetcode.com/problems/permutations/
+//    46. Permutations
     class Solution {
 
         // use 1 queue and 1 stack.
@@ -12,6 +14,11 @@ public class Permutations {
         // Stack maintains prefix of the current result at any point
         // space = N for queue/stack + N for N! for recursion
         // time = N! since there are N! permutations
+        // INTUITION consider 1234
+        // first loop iterates over 1234 like 1234, 2341, 3412, 4123 (it then places 4 to back to queue at the end)
+        // second loop iterates over 234
+        // third loop iterates over 34
+        // fourth loop iterates over 4
         public List<List<Integer>> permute(int[] nums) {
 
             if (nums == null) {
