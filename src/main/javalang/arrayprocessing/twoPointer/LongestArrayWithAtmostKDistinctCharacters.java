@@ -1,4 +1,4 @@
-package javalang.arrayprocessing;
+package javalang.arrayprocessing.twoPointer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class LongestArrayWithAtmostKDistinctCharacters {
 // space = k where k is desired number of distinct characters
 // we maintain a sliding window and a map for characters to frequency for that sliding window. If the size of the map > k then delete entries from left side of
 // sliding window till the map size comes to below k
-    // there is also a solution with TreeMap that gives N time. It involves keeping map of character-> last occurrence
+    // OPTIONAL: there is also a solution with TreeMap that gives N time. It involves keeping map of character-> last occurrence
     class Solution {
         public int lengthOfLongestSubstringKDistinct(String s, int k) {
             if (s == null || s.length() == 0 || k == 0) {
