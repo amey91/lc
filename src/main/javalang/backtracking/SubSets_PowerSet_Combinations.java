@@ -3,7 +3,7 @@ package javalang.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubSetsPowerSet {
+public class SubSets_PowerSet_Combinations {
     // 78. Subsets
 // https://leetcode.com/problems/subsets/
 // Power set!
