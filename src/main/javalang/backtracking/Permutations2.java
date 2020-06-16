@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//https://leetcode.com/problems/permutations-ii/
+//        47. Permutations II
+
 public class Permutations2 {
     class Solution {
-
         // backtracking
         // Space = N
         // Time = NPN/k! = N!/k! where N is total number of characters and k is total number of duplicates
