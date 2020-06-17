@@ -35,7 +35,8 @@ public class ConstructBinaryTreeFromInorderAndPreorderTraversals {
             int currentRoot = preorder[preStart];
 
             int inorderRootIndex = findIndex(inorder, currentRoot);
-            // this represents how many skips we have to do in inorder array to get root for next right subtree. We basically skip all left nodes before right subtree call
+
+            // this is the length of the left subtree. We skip these many nodes in preorder traversal to locate the right subtree root.
             int preorderOffset = inorderRootIndex - inStart;
 
             TreeNode root = new TreeNode(currentRoot);
