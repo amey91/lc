@@ -34,6 +34,7 @@ public class ConstructBinaryTreeFromInorderAndPreorderTraversals {
 
             int currentRoot = preorder[preStart];
 
+            // TODO: look up indexes from a map that stores value -> index to get N time
             int inorderRootIndex = findIndex(inorder, currentRoot);
 
             // this is the length of the left subtree. We skip these many nodes in preorder traversal to locate the right subtree root.
