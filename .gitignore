@@ -6,4 +6,4 @@ build/
 *.iml
 Solution2.java
 output
-
+out/
