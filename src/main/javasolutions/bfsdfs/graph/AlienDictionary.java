@@ -1,4 +1,4 @@
-package javasolutions;
+package javasolutions.bfsdfs.graph;
 
 import java.util.HashMap;
 import java.util.HashSet;
