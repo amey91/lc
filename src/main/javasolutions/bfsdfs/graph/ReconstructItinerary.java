@@ -54,6 +54,8 @@ public class ReconstructItinerary {
             return result;
         }
 
+        // According to Hierholzer's algo, when we reach the end of  DFS< we have either skipped cycles on the way (which DFS will backtrack on the way back)
+        // or we have not skipped cycles, thus traversing all the nodes that come before the deepest node
         private void visit(String curr, Map<String, PriorityQueue<String>> map, List<String> result) {
             while (map.containsKey(curr) && !map.get(curr).isEmpty()) {
                 visit(map.get(curr).poll(), map, result);
