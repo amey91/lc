@@ -16,10 +16,14 @@ public class ConvertNumberToHexadecimal {
 
             StringBuilder sb = new StringBuilder();
 
+            // IMPORtANT: I had written while(num > 0) which will not work for -ve numbers
             while (num != 0) {
 
                 int last4 = num & 15;
                 sb.insert(0, HEX[last4]);
+
+                // IMPORTANT: >>> is logical shift and does not preserve negative number sign
+                // And >> is numerical shift and preserves the sign. We need logical shift here!!
                 num = num >>> 4;
             }
 
