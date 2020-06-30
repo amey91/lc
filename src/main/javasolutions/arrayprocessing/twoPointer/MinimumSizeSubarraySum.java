@@ -25,7 +25,8 @@ public class MinimumSizeSubarraySum {
                 runningSum += nums[right];
 
                 // start decreasing current subarray if sum is satisfactory
-                // IMPORTANT: I did mistake where i said left<right in the condition here. We actually want <= since one digit can be euqal to sum as well
+                // IMPORTANT: I did mistake where I said left<right in the condition here. We actually want <= since one digit can be euqal to sum as well
+                // Also, its okay if left crosses right in this solution!
                 while (runningSum >= s && left <= right) {
                     if (length == -1 || length > right - left + 1) {
                         // we are inside condition satisfied block so this is always correct at this point in the code
