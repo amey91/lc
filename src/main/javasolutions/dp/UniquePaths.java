@@ -1,4 +1,4 @@
-package javasolutions;
+package javasolutions.dp;
 
 import java.util.Arrays;
 

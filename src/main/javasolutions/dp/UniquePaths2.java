@@ -1,4 +1,4 @@
-package javasolutions;
+package javasolutions.dp;
 
 // #63 https://leetcode.com/problems/unique-paths-ii/
 public class UniquePaths2 {
