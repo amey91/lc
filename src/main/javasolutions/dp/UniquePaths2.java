@@ -17,6 +17,8 @@ public class UniquePaths2 {
             int r = obstacleGrid.length;
             int c = obstacleGrid[0].length;
 
+
+            // NOTE during revision: can probably create N+1 x M+1 matrix to make code simpler!
             int[][] memoize = new int[r][c];
 
             // target

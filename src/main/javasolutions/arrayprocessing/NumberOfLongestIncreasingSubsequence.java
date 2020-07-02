@@ -3,14 +3,15 @@ package javasolutions.arrayprocessing;
 public class NumberOfLongestIncreasingSubsequence {
     // https://leetcode.com/problems/number-of-longest-increasing-subsequence/
 // 673. Number of Longest Increasing Subsequence
-    // DP O(n^2) time
-    // O(n) space
 
     class Solution {
 
 
-        // we basically maintain a length array which is the length of the longest increasing subsequence at a point
-        // second is count array which identifies how many substrings of this length exists at that point
+        // Maintain a length array which is the length of the longest increasing subsequence at a point
+        // Maintain second array with count which identifies how many substrings of this length exists at that point
+        // First populate the max length at all points in N time, then using those lengths calculate total counts of max length
+        // DP O(n^2) time
+        // O(n) space
         public int findNumberOfLIS(int[] nums) {
             if (nums == null || nums.length == 0) {
                 return 0;

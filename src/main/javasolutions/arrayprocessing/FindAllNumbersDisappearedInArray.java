@@ -1,4 +1,4 @@
-package javasolutions;
+package javasolutions.arrayprocessing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,8 @@ import java.util.List;
 public class FindAllNumbersDisappearedInArray {
 
     class Solution {
+
+        // for constant space solution we mark individual numbers as negative. So if nums[i] is < 0 then i was seen
         public List<Integer> findDisappearedNumbers(int[] nums) {
 
             List<Integer> missing = new ArrayList<>();
