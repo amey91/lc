@@ -23,7 +23,11 @@ public class SmallestCommonRegion {
     // 1257. Smallest Common Region
 // https://leetcode.com/problems/smallest-common-region/
     class Solution {
-        public String findSmallestRegion_OPTIMAL_APPROACH3(List<List<String>> regions, String region1, String region2) {
+
+        // optimal approach 3 described above
+        // space = 1
+        // time = N
+        public String findSmallestRegion(List<List<String>> regions, String region1, String region2) {
             for (int i = regions.size() -1 ; i >= 0; i--) {
                 List<String> currRegion = regions.get(i);
                 for (String region: currRegion) {

@@ -10,7 +10,7 @@ public class LongestIncreasingSubsequence {
         // e.g. tail[0] contains minimum value of all tails of length 1
         // NOTE not all of this array will be used, only "size" will be used where size is the length of the maximum length of increasing subsequence
         // space = N
-        // time = NlogK where K =  size of longest increasing subsequence
+        // time = NlogK where K = size of longest increasing subsequence
         int[] tails = new int[nums.length];
 
         int size = 0;

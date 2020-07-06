@@ -10,7 +10,7 @@ public class TrappingRainWater {
         // on first pass we create left max array and right max array
         // on second pass, at every point, calculate rain water
         // time = 2N space = N
-        // there is a better N time 1 Spaca solution here: https://leetcode.com/problems/trapping-rain-water/discuss/17386/Sharing-my-Java-code%3A-O(n)-time-O(1)-space
+        // there is a better N time 1 Space solution here: https://leetcode.com/problems/trapping-rain-water/discuss/17386/Sharing-my-Java-code%3A-O(n)-time-O(1)-space
         public int trap(int[] height) {
             if (height == null || height.length == 0) {
                 return 0;
@@ -20,7 +20,7 @@ public class TrappingRainWater {
             int[] left = new int[n];
             int[] right = new int[n];
 
-            // hardcode the edge conditions for first and last element since limits on outof bounds are 0.
+            // hardcode the edge conditions for first and last element since limits on out of bounds are 0.
             left[0] = 0;
             right[n - 1] = 0;
 

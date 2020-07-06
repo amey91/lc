@@ -5,7 +5,10 @@ import java.util.*;
 public class GroupAnagrams {
     // 49. Group Anagrams
 // https://leetcode.com/problems/group-anagrams/
+// IMPORTANT/CRITICAL: there is a better solution to count the palindrome letters in an array and then generate a string from the
+// array. It is important to separate each letter by delimiter because we do not want to count 1a1b same as 11a
     class Solution {
+
 
         // time = N * KlogK for sorting each string in the list, K is length of individual string
         // space = N

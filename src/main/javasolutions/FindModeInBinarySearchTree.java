@@ -7,12 +7,7 @@ import javasolutions.commons.TreeNode;
 
 public class FindModeInBinarySearchTree {
 
-// NOTE: inorder traversal makes sure that all duplicates are grouped together, so
-// keeping track of last value will allow us to group them without needing a map
-// e.g. 1,1,2,2,2,3,4,5,6,6,7 etc.
 
-    // time = O(n)
-// space = O(1)
 // 501. Find Mode in Binary Search Tree
 // https://leetcode.com/problems/find-mode-in-binary-search-tree/
     class Solution {
@@ -23,13 +18,20 @@ public class FindModeInBinarySearchTree {
         int maxCount = 0;
         List<Integer> result = new ArrayList<>();
 
+
+        // NOTE: inorder traversal makes sure that all duplicates are grouped together, so
+        // keeping track of last value will allow us to group them without needing a map
+        // e.g. 1,1,2,2,2,3,4,5,6,6,7 etc.
+            // time = O(n)
+        // space = O(1)
         public int[] findMode(TreeNode root) {
             if (root == null) {
                 return new int[0];
             }
             inOrderTraversal(root);
-            int[] resultArr = new int[result.size()];
 
+            // populate list from array
+            int[] resultArr = new int[result.size()];
             for (int i = 0; i < result.size(); i++) {
                 resultArr[i] = result.get(i);
             }

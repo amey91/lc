@@ -33,6 +33,7 @@ public class ReorderList {
         }
 
         private ListNode mergeLists(ListNode l1, ListNode l2) {
+            // IMPORTANT: sentry node to make solution cleaner
             ListNode head = new ListNode(-1);
             ListNode curr = head;
             while (l1 != null && l2 != null) {

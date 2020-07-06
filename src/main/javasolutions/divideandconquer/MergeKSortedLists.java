@@ -4,9 +4,10 @@ import javasolutions.commons.ListNode;
 
 // https://leetcode.com/problems/merge-k-sorted-lists/submissions/
 // 23. Merge k Sorted Lists
-class MergeKLists {
+public class MergeKSortedLists {
+
     // this uses Divide and Conquer!
-    // time = NlogK since we merge N-sized lists K times
+    // time = NlogK since we merge K, N-sized lists. In other words, merge N length lists logK times where k = number of lists
     // space = 1
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {

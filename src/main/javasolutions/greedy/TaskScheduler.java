@@ -17,6 +17,7 @@ public class TaskScheduler {
 
     class Solution {
 
+        // for interviews, see analytical approach 1 which is interview friendly
         // ANALYTICAL APPROACH 2 uses array instead of map and calculates idle slots
         // compared to analytical apporach 1 below, we stop trying to count the empty slots per partition. In this approach, we just count the empty slots in the entire system at once and then proceed to see if
         // those empty slots can be filled. If all empty slots cannot be filled, then we will neeed the balance empty slots to satisfy the window constraint. Else if there are not empty sots, then tasks
@@ -45,7 +46,8 @@ public class TaskScheduler {
             return idles > 0 ? tasks.length + idles : tasks.length;
         }
 
-        // ANALYTICAL APPROACH 1 - Interview friendly. Count frequencies and calculate how many partitions, idle slots per partition and total length after all idle slots have been filled.
+        // ANALYTICAL APPROACH 1 - Interview friendly. Count frequencies and calculate how many partitions,
+        // idle slots per partition and total length after all idle slots have been filled.
         // space = N for frequency map + N for PQ
         // time = N for frequency map
         public int leastInterval_frequencyanalysis(char[] tasks, int n) {

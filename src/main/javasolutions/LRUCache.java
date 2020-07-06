@@ -27,6 +27,7 @@ public class LRUCache {
         class Node {
             Node next;
             Node prev;
+            // Note while revising: val is probably not needed
             int val;
             int key;
 

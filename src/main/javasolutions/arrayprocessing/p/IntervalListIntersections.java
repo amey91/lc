@@ -30,7 +30,7 @@ public class IntervalListIntersections {
                     list.add(new int[]{min, max});
                 }
 
-                // move higher endpoint to next element
+                // move lower endpoint to next element
                 if (A[i][1] < B[j][1]) {
                     i++;
                 } else {

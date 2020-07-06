@@ -9,6 +9,9 @@ public class ConstructBinaryTreeFromPreorderTraversal {
 
     // Divide and conquer
     class Solution {
+
+        // preorder = NLR, all L are smaller than N, so just call the function recursively
+        //
         public TreeNode bstFromPreorder(int[] preorder) {
             if (preorder == null || preorder.length == 0) {
                 return null;

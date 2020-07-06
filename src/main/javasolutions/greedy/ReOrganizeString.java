@@ -1,9 +1,10 @@
 package javasolutions.greedy;
 
-public class ReOrganizeString {
-    // https://leetcode.com/problems/reorganize-string
-// https://leetcode.com/problems/reorganize-string/submissions/
+// 767. Reorganize String
+// https://leetcode.com/problems/reorganize-string
+// Medium
 
+public class ReOrganizeString {
 
     class Solution {
 

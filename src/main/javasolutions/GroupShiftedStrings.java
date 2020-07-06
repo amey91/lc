@@ -15,7 +15,7 @@ public class GroupShiftedStrings {
     class Solution {
         public List<List<String>> groupStrings(String[] strings) {
             // ALGO
-            // fidn the sequence
+            // find the sequence
             // if sequqnce exists in the map, add to that value list
             // else create and then add to value list
             // return list of values

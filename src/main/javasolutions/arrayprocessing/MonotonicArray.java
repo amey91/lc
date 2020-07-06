@@ -1,4 +1,6 @@
-package javasolutions.arrayprocessing;// 896. Monotonic Array
+package javasolutions.arrayprocessing;
+
+// 896. Monotonic Array
 // https://leetcode.com/problems/monotonic-array/
 
 class Solution {

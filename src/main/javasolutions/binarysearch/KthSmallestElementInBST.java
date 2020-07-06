@@ -4,8 +4,11 @@ import java.util.ArrayDeque;
 
 import javasolutions.commons.TreeNode;
 
-public class KthSmallestElementInBST {// https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 // 230. Kth Smallest Element in a BST
+// https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+// Medium
+
+public class KthSmallestElementInBST {
 
     // iterate inorder till kth index
     class Solution {

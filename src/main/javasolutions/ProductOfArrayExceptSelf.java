@@ -5,7 +5,9 @@ public class ProductOfArrayExceptSelf {
 //  238. Product of Array Except Self
 //  https://leetcode.com/problems/product-of-array-except-self/
 
-  // this approach depends on eliminating one of the 2 arrays we use in N space solution
+  // This approach depends on eliminating one of the 2 arrays we use in N space solution
+  // So instead of having left and right sided running product arrays, we store one side of the traversal into result
+  // ans the other side is the running sum on the fly!
   public int[] productExceptSelf(int[] nums) {
     // algorithm
     // product = 1

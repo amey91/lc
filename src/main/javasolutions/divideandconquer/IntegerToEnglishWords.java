@@ -10,7 +10,7 @@ public class IntegerToEnglishWords {
     private static final int ONE = 1;
 
 
-    // we divide the num into 4 chings of 3 digits each. WE process the chunks the same way, the only difference being the denomination we add at the 
+    // we divide the num into 4 chunks of 3 digits each. Process the chunks the same way, the only difference being the denomination we add at the
     // end of each chunk e.g. million billion etc.
     public String numberToWords(int num) {
 
