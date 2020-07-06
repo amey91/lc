@@ -2,7 +2,6 @@ package javasolutions.arrayprocessing;
 
 public class NumberOfSquaresInGrid {
 
-
     // Problem by Himanshu mama, to count all squares in an M*N matrix
     // time = m^2 * n^2 since for every point I am traversing all other left over points
     // space = 1, did not create a matrix, instead only maintaining int counts.
