@@ -4,6 +4,11 @@ package javasolutions;
 public class SortCharactersByFrequency {
 
     class Solution {
+
+        // get frequency count for each char into a fixed array and then iteratively keep finding the max count element
+        // and adding to the result
+        // time = N for frequency count and then 1 for finding interative max and then N for generating final output = N
+        // space = N since I create new char array to generate the output
         public String frequencySort(String s) {
             if (s == null || s.length() == 0) {
                 return s;

@@ -7,6 +7,11 @@ import java.util.List;
 // https://leetcode.com/problems/find-common-characters/
 
 public class FindCommonCharacters {
+
+    // this solution parses each string and gets char counts into a frequancy array and maintains a running sum of min counts
+    // from all strings since we need intersection
+    // time = M (length of all strings in input)
+    // space = 1 since chars are fixed
     class Solution {
         public List<String> commonChars(String[] A) {
 

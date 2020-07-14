@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 // https://leetcode.com/problems/find-median-from-data-stream/
-public class MedianOfSortedDataStream {
+public class FindMedianOfSortedDataStream {
 //        Solution 2 using 2 priority queues
 //            time for add = O(logn) for deletion/insertion into each queue for single add in worst case
 //    time for findmedian = 1
@@ -16,7 +16,7 @@ public class MedianOfSortedDataStream {
     Integer size;
 
     /** initialize your data structure here. */
-    public MedianOfSortedDataStream() {
+    public FindMedianOfSortedDataStream() {
         minHeap = new PriorityQueue<>();
         maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
         median = null;

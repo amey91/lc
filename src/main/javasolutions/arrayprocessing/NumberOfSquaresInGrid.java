@@ -17,6 +17,7 @@ public class NumberOfSquaresInGrid {
         for (int row = 1; row <= ROWS; row++) {
             for (int col = 1; col <= COLS; col++) {
 
+                // all squares starting at this position
                 total += squares(ROWS, COLS, row, col);
             }
         }

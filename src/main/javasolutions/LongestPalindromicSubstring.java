@@ -1,7 +1,7 @@
 package javasolutions;
 
 // #5 https://leetcode.com/problems/longest-palindromic-substring/
-public class LongestPalindromicString {
+public class LongestPalindromicSubstring {
 
 	class Solution {
 		public String longestPalindrome(String s) {

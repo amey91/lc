@@ -24,7 +24,7 @@ public class TopKFrequentElements {
 
             List<Integer>[] buckets = new List[nums.length + 1];
 
-            // map every frequency to the numbers that occured in that frequency
+            // map every frequency to the numbers that occurred in that frequency
             for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
                 if (buckets[entry.getValue()] == null) {
                     buckets[entry.getValue()] = new ArrayList<>();
