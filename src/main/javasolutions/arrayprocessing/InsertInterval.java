@@ -9,7 +9,7 @@ public class InsertInterval {
 
     class Solution {
 
-        // IMPORTANT: for soolving this problem, I was looking at enumerating situations where there is overlap
+        // IMPORTANT: for solving this problem, I was looking at enumerating situations where there is overlap
         // However, the trick to solving this efficiently is to enumerate conditions where there is no overlap and then treat all remaining conditions as ones with overlap!
         // Also remember to handle last unmerged interval into list
         // time N

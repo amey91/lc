@@ -8,7 +8,7 @@ public class FindPerfectMatrix {
     private static final int[][] DIRS = new int[][]{{0,1},{1,0}, {-1,0}, {0,-1}};
 
 //    private static int SIZE = 3;  // 3x3 matrix
-    private static int SIZE = 5; // 5x5 matrix
+    private static int SIZE = 4; // 5x5 matrix
 
     public static void main(String[] args) {
 

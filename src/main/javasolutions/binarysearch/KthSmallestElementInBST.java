@@ -10,7 +10,7 @@ import javasolutions.commons.TreeNode;
 
 public class KthSmallestElementInBST {
 
-    // iterate inorder till kth index
+    // iterate inorder till kth index using arraydeque
     class Solution {
         public int kthSmallest(TreeNode root, int k) {
 

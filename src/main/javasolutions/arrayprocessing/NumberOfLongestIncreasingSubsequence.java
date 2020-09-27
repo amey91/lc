@@ -1,11 +1,11 @@
 package javasolutions.arrayprocessing;
 
 public class NumberOfLongestIncreasingSubsequence {
-    // https://leetcode.com/problems/number-of-longest-increasing-subsequence/
+// https://leetcode.com/problems/number-of-longest-increasing-subsequence/
 // 673. Number of Longest Increasing Subsequence
+// Do longest increasing subsequence first : 300. https://leetcode.com/problems/longest-increasing-subsequence/
 
     class Solution {
-
 
         // Maintain a length array which is the length of the longest increasing subsequence at a point
         // Maintain second array with count which identifies how many substrings of this length exists at that point

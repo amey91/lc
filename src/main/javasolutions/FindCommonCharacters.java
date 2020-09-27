@@ -29,9 +29,9 @@ public class FindCommonCharacters {
             List<String> list = new ArrayList<>();
             for (int i = 0; i < 26; i++) {
                 int count = intArr[i];
-                while(count > 0) {
-                    count --;
-                    list.add(String.valueOf((char)('a' + i)));
+                while (count > 0) {
+                    count--;
+                    list.add(String.valueOf((char) ('a' + i)));
                 }
             }
             return list;
@@ -39,7 +39,7 @@ public class FindCommonCharacters {
 
         private int[] getIntArray(String s) {
             int[] result = new int[26];
-            char[] sChar =  s.toCharArray();
+            char[] sChar = s.toCharArray();
             for (int i = 0; i < sChar.length; i++) {
 
                 // Good way to downsize all lowercase chars to indices between 0 and 25
@@ -49,7 +49,7 @@ public class FindCommonCharacters {
         }
 
         private void convergeArraysToMinValues(int[] arr1, int[] arr2) {
-            for (int i = 0; i< 26; i++) {
+            for (int i = 0; i < 26; i++) {
                 arr1[i] = Math.min(arr1[i], arr2[i]);
             }
         }

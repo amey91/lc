@@ -17,6 +17,8 @@ public class FlattenBinaryTreeToLinkedList {
     class Solution {
 
         // algo: each recursive call returns the tail of the flattened tree (which is rightTail if right side was present or it is lefttail)
+        // time = N
+        // space = 1
         public void flatten(TreeNode root) {
             flattenInternal(root);
         }
@@ -37,6 +39,7 @@ public class FlattenBinaryTreeToLinkedList {
             }
 
             // rearrange nodes for moving left subtree to right
+            // IMP: we are assigning the right subtree of LEFT to the original root.right and not to rightTrail
             TreeNode temp = node.right;
             node.right = node.left;
             node.left = null;

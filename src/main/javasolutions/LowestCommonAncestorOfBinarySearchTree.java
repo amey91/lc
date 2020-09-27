@@ -16,8 +16,8 @@ public class LowestCommonAncestorOfBinarySearchTree {
         //      2. If it is not in subtree, then we will return the other node from whereever it is found and handle result while returning
         //          value from actual LCA node
         public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-            int larger = p.val > q.val? p.val : q.val;
-            int smaller = p.val > q.val? q.val : p.val;
+            int larger = Math.max(p.val, q.val);
+            int smaller = Math.min(p.val, q.val);
 
             while(true) {
                 if (root == null) {

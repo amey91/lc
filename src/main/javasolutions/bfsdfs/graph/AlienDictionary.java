@@ -58,7 +58,7 @@ public class AlienDictionary {
                 }
             }
 
-            // since this is DFS the firrst node is the deepest and that one has most dependencies.
+            // since this is DFS the first node is the deepest and that one has most dependencies.
             // In the answer we want, the letter with no dependeny is first. So we
             // reverse the dfs result to bring zero dependency items first
             return sb.reverse().toString();

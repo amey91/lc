@@ -20,6 +20,33 @@ public class KnightDialer {
     // they have asked us to mod answer with this number
     private static final int MODULO = 1_000_000_007;
 
+    // Optimal bottoms up DP solution that uses smart memoization by only remembering results of (N) and (N-1) levels
+    // at any point of time.
+    public int knightDialer_bottomsUp(int N) {
+        int[] current = new int[10];
+        Arrays.fill(current, 1);
+        int currentHop = 1;
+        while (currentHop < N) {
+            int[] previous = new int[10];
+            System.arraycopy(current, 0, previous, 0, current.length);
+            currentHop++;
+            for (int i = 0; i < 10; i++) {
+                int currSum = 0;
+                for (int neighbor : getNeighbors(i)) {
+                    currSum = (currSum + previous[neighbor]) % MODULO;
+                }
+                current[i] = currSum;
+            }
+        }
+        int sum = 0;
+        for (int value : current) {
+            // modulo is commutative
+            // (a + b) % c = ((a % c ) + (b % c)) %c
+            sum = (sum + value) % MODULO;
+        }
+        return sum;
+    }
+
     // this is the linear solution with DP + memoization. This can be further optimized by going bottoms up since we dont have to recurse down
     // and remember counts for all root nodes. ONLY (N-1 x 10) level matters to calculate results of (N x 10) level. So space is constant
     // since only 10 x 1 matrix is needed in bottoms up solution
@@ -76,32 +103,6 @@ public class KnightDialer {
         return getMap().get(position);
     }
 
-    // Optimal bottoms up DP solution that uses smart memoization by only remembering results of (N) and (N-1) levels
-    // at any point of time.
-    public int knightDialer_bottomsUp(int N) {
-        int[] current = new int[10];
-        Arrays.fill(current, 1);
-        int currentHop = 1;
-        while (currentHop < N) {
-            int[] previous = new int[10];
-            System.arraycopy(current, 0, previous, 0, current.length);
-            currentHop++;
-            for (int i = 0; i < 10; i++) {
-                int currSum = 0;
-                for (int neighbor : getNeighbors(i)) {
-                    currSum = (currSum + previous[neighbor]) % MODULO;
-                }
-                current[i] = currSum;
-            }
-        }
-        int sum = 0;
-        for (int value : current) {
-            // modulo is commutative
-            // (a + b) % c = ((a % c ) + (b % c)) %c
-            sum = (sum + value) % MODULO;
-        }
-        return sum;
-    }
 
     public static void main(String[] args) {
         new KnightDialer().knightDialer_bottomsUp(2);

@@ -29,7 +29,7 @@ public class MinimumCostOfTickets {
 
         }
 
-        // here you dont need to pass int he currentCost top down, rather the counts will be calculated bottoms up in dp array
+        // here you dont need to pass in the currentCost top down, rather the counts will be calculated bottoms up in dp array
         private int costHelper(int[] days, int[] costs, int daysIndex, int[] dp) {
             if (daysIndex >= days.length) {
                 return 0;

@@ -22,6 +22,9 @@ public class TopKFrequentElements {
                 map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
             }
 
+            // Map every frequency to the numbers that occurred in that frequency
+            // The frequencies can range from 0 (no numbers), 1 (all unique), ... n (all same numbers), so frequency
+            // buckets range from 0 to length-1
             List<Integer>[] buckets = new List[nums.length + 1];
 
             // map every frequency to the numbers that occurred in that frequency
@@ -39,7 +42,7 @@ public class TopKFrequentElements {
                     for (int listItem: buckets[listIndex]) {
 
                         // return if array is full
-                        if (resultIndex >= result.length) {
+                        if (resultIndex >= k) {
                             return result;
                         }
 
